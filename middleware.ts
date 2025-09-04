@@ -1,10 +1,10 @@
-import {NextRequest} from "next/server";
+import { NextRequest } from "next/server";
 import createIntlMiddleware from "next-intl/middleware";
-import {routing} from "./i18n/routing";
-import {auth} from "@/lib/auth";
-import {getTokenInfo} from "@/features/auth/actions/auth.action";
+import { routing } from "./i18n/routing";
+import { auth } from "@/lib/auth";
+import { getTokenInfo } from "@/features/auth/actions/auth.action";
 
-export const publicRoutes = ["/","/actualites-nationales","/articles","/podcasts", "/galerie", "/a-la-une","/sports","/dailies"];
+export const publicRoutes = ["/", "/actualites-nationales", "/articles", "/podcasts", "/galerie", "/a-la-une", "/sports", "/dailies"];
 
 // Middleware d'internationalisation
 const intlMiddleware = createIntlMiddleware(routing);
