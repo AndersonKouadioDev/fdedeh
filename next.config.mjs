@@ -32,7 +32,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "admin-test.fdedeh.info",
 			},
-
+            {
+                protocol: "https",
+                hostname: "admin.fdedeh.info",
+            }
 		],
 	},
 };
