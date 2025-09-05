@@ -23,7 +23,7 @@ function DailyDetails({dailyId}: { dailyId: string }) {
     const {getDailyById, isLoading, isFetching} = useDailyStore();
 
     const daily = getDailyById(dailyId);
-    const [, setSelectedDate] = useState<string | null>(null);
+    const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
     useEffect(() => {
         if (daily && daily.published_at) {
