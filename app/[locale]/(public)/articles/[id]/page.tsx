@@ -1,7 +1,11 @@
 import React from 'react';
 import ArticleDetails from "@/features/articles/components/article/article-details";
 
-async function ArticleDetailPage({params}: { params: Promise<{ id: string }> }) {
+type Props = {
+    params: Promise<{ id: string }>
+}
+
+async function ArticleDetailPage({params}: Props) {
 	const {id} = await params;
 
 	return (

@@ -30,8 +30,9 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "fernand-dedeh-blog.groupmafamo.com",
+				hostname: "admin-test.fdedeh.info",
 			},
+
 		],
 	},
 };

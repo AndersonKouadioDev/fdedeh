@@ -7,16 +7,12 @@ import Publicite from "@/components/publicite";
 import {addDomainToBackendImagePath} from "@/utils/image-utils";
 import SimilarArticle from "@/features/articles/components/article/similar-article";
 import {useArticleStore} from "@/features/articles/stores/article.store";
+import SocialShare from "@/features/articles/components/social-share";
 
 function ArticleDetails({slug}: { slug: string }) {
 
 	const {getArticleBySlug} =  useArticleStore()
 	const article = getArticleBySlug(slug);
-
-
-	// if(showLoading){
-	// 	return <LoadingIndicator/>
-	// }
 
 	return (
 		<article className="page-container">
@@ -47,6 +43,7 @@ function ArticleDetails({slug}: { slug: string }) {
 					<div className="prose max-w-none row-span-2">
 						<div className="text-justify text-sm md:text-base" dangerouslySetInnerHTML={{__html:article.content}}>
 						</div>
+                        <SocialShare/>
 						<div className="mt-14">
 							<div>
 								<SectionTitle

@@ -21,7 +21,7 @@ function FlashInfo() {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setActiveInfoIndex((prevIndex) => (prevIndex + 1) % activeFlashInfos.length);
-		}, 10 * 1000);
+		}, 5 * 1000);
 
 		return () => clearInterval(interval);
 	}, [activeFlashInfos]);
