@@ -7,7 +7,7 @@ export function addDomainToBackendImagePath(imagePath: string | null | undefined
 				return imagePath; // Si c'est déjà une URL complète, on la retourne telle quelle
 		}
 
-		const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8081";
+		const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8081";
 
 		// S'Assurer qu'il n'y a pas de double slash
 		if (imagePath.startsWith('/')) {
