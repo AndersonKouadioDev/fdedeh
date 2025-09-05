@@ -8,6 +8,7 @@ import DailyCarouselWithPagination from "@/features/dailies/components/carousel/
 import {Badge} from "@/components/ui/badge";
 import {cn} from "@/lib/utils";
 import SocialShare from "@/features/articles/components/social-share";
+import {sendGAEvent} from '@next/third-parties/google'
 
 const colors = [
     "bg-blue-100 text-blue-800",
@@ -24,6 +25,10 @@ function DailyDetails({dailyId}: { dailyId: string }) {
 
     const daily = getDailyById(dailyId);
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
+
+    useEffect(() => {
+        sendGAEvent('page_view', 'daily', {daily_id: dailyId});
+    }, [dailyId]);
 
     useEffect(() => {
         if (daily && daily.published_at) {

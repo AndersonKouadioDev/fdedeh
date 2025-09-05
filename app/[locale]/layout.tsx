@@ -16,7 +16,8 @@ import {NuqsAdapter} from "nuqs/adapters/next/app";
 import {dehydrate, HydrationBoundary} from "@tanstack/react-query";
 import getQueryClient from "@/lib/get-query-client";
 import DataProvider from "@/providers/data.provider";
-
+import {GoogleAnalytics} from '@next/third-parties/google';
+//
 const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
@@ -78,6 +79,7 @@ export default async function RootLayout(
                 </HydrationBoundary>
             </QueryProvider>
         </NextIntlClientProvider>
+        <GoogleAnalytics gaId="G-SYWNXWW3XW"/>
         </body>
         </html>
     );
