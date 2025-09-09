@@ -35,7 +35,7 @@ export default async function middleware(req: NextRequest) {
       }
 
       const encodedCallbackUrl = encodeURIComponent(callbackUrl);
-      const loginUrl = new URL(`/?callbackUrl=${encodedCallbackUrl}`, req.url);
+      const loginUrl = new URL(`/?callbackUrl=${encodedCallbackUrl}`, req.nextUrl.origin);
 
       return Response.redirect(loginUrl);
     }
@@ -43,6 +43,7 @@ export default async function middleware(req: NextRequest) {
     return intlMiddleware(req);
   }
 }
+
 export const config = {
   matcher: [
     "/((?!.+\\.[\\w]+$|_next|_vercel).*)",
