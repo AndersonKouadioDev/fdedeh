@@ -1,13 +1,14 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import {authAPI} from "@/features/auth/apis/auth.api";
-import {JWT} from "next-auth/jwt";
+import { authAPI } from "@/features/auth/apis/auth.api";
+import { JWT } from "next-auth/jwt";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 jours (refresh token)
   },
+  trustHost: true,
   debug: process.env.NODE_ENV === "development",
   providers: [
     CredentialsProvider({
@@ -83,6 +84,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           type: token.type,
           status: token.status,
           isPasswordChangeRequired: token.isPasswordChangeRequired,
+          accessToken: token.accessToken,
+          refreshToken: token.refreshToken,
         };
       }
       if (token.error) {
