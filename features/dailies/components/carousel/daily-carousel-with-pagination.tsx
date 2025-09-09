@@ -8,7 +8,7 @@ import {cn} from "@/lib/utils";
 function DailyCarouselWithPagination({daily}: { daily: IDaily }) {
 	const [api, setApi] = React.useState<CarouselApi>()
 	const [current, setCurrent] = React.useState(0)
-	const [count, setCount] = React.useState(0)
+	const [, setCount] = React.useState(0)
 	React.useEffect(() => {
 		if (!api) {
 			return
@@ -24,11 +24,11 @@ function DailyCarouselWithPagination({daily}: { daily: IDaily }) {
 
 	return (
 		<>
-			<Slider
-				setApi={setApi}
-				className="h-[400px] md:h-[500px]"
-				images={images}
-			/>
+            {images.length > 0 && <Slider
+                setApi={setApi}
+                className="h-[400px] md:h-[500px]"
+                images={images}
+            />}
 			<div className="-mt-8 flex items-center justify-center gap-2">
 				{images?.map((_, index) => (
 					<button

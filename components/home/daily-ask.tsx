@@ -17,7 +17,7 @@ function DailyAsk() {
 				<div
 					className="relative overflow-hidden rounded-2xl w-full sm:w-[300px] max-md:h-48 flex items-center justify-center"
 				>
-					<Image src="/images/all-img/c1.png" alt="Question du jour" fill/>
+					<Image src="/images/all-img/daily-ask.jpg" alt="Question du jour" width={400} height={267}/>
 				</div>
 				<article className="flex flex-col flex-1">
 					<div className="p-6">
